@@ -1,0 +1,237 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  background-color: #2c3e50;
+}
+/* main {
+  padding: 10px;
+} */
+
+.title {
+  font-size: 3rem;
+  display: grid;
+  place-items: center;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #2c3e50; /* Sidebar background color */
+  color: white;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative; /* Needed for absolute positioning of submenu */
+  transform: translateY(55px);
+}
+
+.top_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+}
+.logo {
+  font-size: 18px;
+  line-height: 0;
+}
+.bars {
+  width: 30px;
+  color: #ffffff;
+}
+.hide {
+  display: none;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  height: 30px;
+  padding: 10px;
+}
+.search input {
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+  background: rgb(238, 238, 238);
+  color: white;
+}
+
+.routes {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.link {
+  display: flex;
+  color: white;
+  gap: 10px;
+  padding: 5px 10px;
+  border-right: 4px solid transparent;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.link:hover {
+  border-right: 4px solid white;
+  background: rgb(45, 51, 89);
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.active {
+  background: #1abc9c; /* Background color for active menu */
+}
+
+.link_text {
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.menu {
+  display: flex;
+  color: white;
+  padding: 5px 10px;
+  border-right: 4px solid transparent;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  justify-content: space-between;
+}
+
+.menu_item {
+  display: flex;
+  gap: 10px;
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove lines from submenu options */
+.menu_container .link {
+  padding-left: 20px;
+  border-bottom: none; /* Removed the border line */
+}
+
+/* Hover effect for submenu items */
+.menu_container .link:hover .link_text {
+  color: #1abc9c; /* Change text color to #1abc9c on hover */
+}
+
+/* Display submenu as overlay when sidebar is collapsed */
+.sidebar.collapsed .menu_container {
+  position: absolute;
+  left: 45px; /* Position it next to the collapsed sidebar */
+  top: 0px;
+  background-color: #2a394f;
+  width: 200px;
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  display: none; /* Initially hidden */
+  z-index: 1000;
+}
+
+/* Show the submenu on hover when the sidebar is collapsed */
+.sidebar.collapsed .menu:hover .menu_container {
+  display: block; /* Show submenu when hovering over a menu item */
+}
+
+.sidebar.collapsed .icon {
+  margin-bottom: 10px; /* Ensures equal spacing for all icons */
+  display: flex;
+  justify-content: center;
+  transform: translateY(60px);
+}
+
+/* Styling for the + and - icons */
+.toggle-icon {
+  font-size: 1.2rem; /* Adjust the size as needed */
+  margin-left: auto; /* Push it to the right end of the menu item */
+  padding: 0 10px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+/* Style for overlay menu when sidebar is collapsed */
+.overlay-menu {
+  position: absolute;
+  left: 45px; /* Position it next to the collapsed sidebar */
+  top: 0;
+  background-color: #2a394f;
+  width: 200px;
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* ProfileCard.css */
+
+.profile-container {
+  background-color: #3e5871; /* Background color for the profile card */
+  padding: 10px 15px;
+  border-bottom: 1px solid #1c2833;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-name {
+  font-size: 16px;
+}
+
+.chevron {
+  font-size: 0.9rem;
+  margin-top: 4px; /* Adjust spacing below name */
+  transition: transform 0.3s;
+}
+
+.chevron.rotate {
+  transform: rotate(180deg);
+}
+
+/* Logout option styling, inherits sidebar background and aligns below profile card */
+.profile-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white; /* Text color for logout */
+  padding: 10px 15px; /* Match the sidebar's padding */
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  background-color: inherit;
+  margin: 10px 0px 0px 0px; 
+  width: 100%;/* No background, matches sidebar */
+}
+
+.profile-logout:hover {
+  color: #c0392b; /* Darker red on hover */
+}
+
+.logout-icon {
+  font-size: 1rem;
+}
+
+
